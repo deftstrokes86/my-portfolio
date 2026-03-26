@@ -1,8 +1,12 @@
+if (typeof globalThis !== "undefined") {
+  try { delete (globalThis as any).localStorage; } catch (e) {}
+}
+
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
 import { Toaster } from '@/components/ui/toaster';
-// import { ThemeProvider } from '@/components/theme-provider';
+import { ThemeProvider } from '@/components/theme-provider';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { siteConfig } from '@/lib/data';
@@ -42,7 +46,7 @@ export const metadata: Metadata = {
   },
   manifest: `${SITE_URL}/manifest.json`,
   icons: {
-    icon: '',
+    icon: '/favicon.ico',
   },
 };
 

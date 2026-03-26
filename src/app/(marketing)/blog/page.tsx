@@ -1,13 +1,13 @@
 
-'use client';
-
 import Link from 'next/link';
-import { writing } from '@/lib/data';
+import { getPosts } from '@/lib/posts';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight } from 'lucide-react';
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  const writing = await getPosts();
+
   return (
     <div className="container mx-auto max-w-5xl py-16 md:py-24">
       <div className="mb-12 text-center">

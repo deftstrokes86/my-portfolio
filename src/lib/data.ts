@@ -221,7 +221,6 @@ export const navLinks = [
   { href: '#case-studies', label: 'Case Studies' },
   { href: '/about', label: 'About' },
   { href: '/blog', label: 'Writing' },
-  { href: '/generate-post', label: 'Generate Post' },
   { href: '/contact', label: 'Contact' },
-  { href: '/play', label: 'Playground' },
+  { href: '/cms', label: 'CMS' },
 ];

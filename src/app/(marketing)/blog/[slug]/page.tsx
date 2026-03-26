@@ -2,13 +2,13 @@
 'use server';
 
 import { notFound } from 'next/navigation';
-import { writing } from '@/lib/data';
+import { getPostBySlug } from '@/lib/posts';
 import { BlogPostClientView } from './blog-post-client-view';
 import { JSONLD, blogPostingLD } from '@/lib/structured-data';
 import { siteUrl } from '@/lib/seo';
 
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = writing.find((p) => p.slug === params.slug);
+  const post = await getPostBySlug(params.slug);
 
   if (!post) {
     notFound();
