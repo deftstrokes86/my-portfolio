@@ -86,59 +86,62 @@ export default function Home() {
         <Services />
       </div>
 
-      {/* 5. Process & 7. Engagement Models */}
-      <div className="bg-secondary/20 border-y border-border/40 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent pointer-events-none" />
-        <div className="container relative mx-auto max-w-6xl px-4 md:px-6 py-24 md:py-32">
-            <Process />
-        </div>
-      </div>
+      {/* 5. Process & Engagement Models */}
+      <Process />
 
       {/* 6. Testimonials */}
-      <section id="testimonials" className="w-full py-24 md:py-32 bg-background relative">
+      <section id="testimonials" className="w-full py-24 md:py-32 bg-secondary/10 border-b border-border/40 relative">
         <div className="container mx-auto max-w-6xl px-4 md:px-6">
           <div className="mb-16 text-center max-w-2xl mx-auto">
-            <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+            <h2 className="font-headline text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
               What My Clients Say
             </h2>
-            <p className="mt-4 text-muted-foreground md:text-lg">
-              Collaborations that resulted in exceptional digital experiences and measurable growth.
+            <p className="mt-6 text-muted-foreground md:text-lg leading-relaxed">
+              Real outcomes from collaborations that prioritize execution over hype.
             </p>
           </div>
           <Carousel
             opts={{ align: 'start', loop: true }}
             className="w-full px-4 md:px-0"
           >
-            <CarouselContent className="-ml-4 md:-ml-8">
+            <CarouselContent className="-ml-6">
               {testimonials.map((testimonial, index) => (
-                <CarouselItem key={index} className="pl-4 md:pl-8 md:basis-1/2 lg:basis-1/3 group">
-                  <div className="h-full transition-shadow duration-300 hover:-translate-y-1">
-                    <TestimonialCard testimonial={testimonial} />
-                  </div>
+                <CarouselItem key={index} className="pl-6 md:basis-1/2 group">
+                  <TestimonialCard testimonial={testimonial} />
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <div className="flex items-center justify-center gap-4 mt-12">
-                <CarouselPrevious className="static translate-y-0 text-foreground border-border/60 bg-transparent hover:bg-secondary h-12 w-12" />
-                <CarouselNext className="static translate-y-0 text-foreground border-border/60 bg-transparent hover:bg-secondary h-12 w-12" />
+            <div className="flex items-center justify-center gap-6 mt-16">
+                <CarouselPrevious className="static translate-y-0 text-foreground border border-border/60 bg-card hover:bg-secondary hover:text-primary h-14 w-14 rounded-full shadow-sm transition-all" />
+                <CarouselNext className="static translate-y-0 text-foreground border border-border/60 bg-card hover:bg-secondary hover:text-primary h-14 w-14 rounded-full shadow-sm transition-all" />
             </div>
           </Carousel>
         </div>
       </section>
 
-      {/* 8. Final CTA */}
-      <section className="w-full py-32 md:py-40 bg-foreground text-background relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/20 to-transparent pointer-events-none"></div>
-        <div className="container relative z-10 mx-auto max-w-4xl px-4 text-center">
-          <h2 className="font-headline text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-8 tracking-tight">
-            Ready to build something great?
+      {/* 8. Final CTA Centerpiece */}
+      <section className="w-full py-32 md:py-48 bg-foreground text-background relative flex items-center justify-center overflow-hidden">
+        {/* Radical structural depth */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/15 via-foreground to-foreground opacity-90 pointer-events-none"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/20 blur-[130px] rounded-full mix-blend-screen pointer-events-none"></div>
+        
+        <div className="container relative z-10 mx-auto max-w-5xl px-4 md:px-6 text-center flex flex-col items-center">
+          <h2 className="font-headline text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-extrabold mb-10 tracking-tighter leading-[1.1] text-balance">
+            Let's build web products that actually matter.
           </h2>
-          <p className="text-xl text-background/80 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Let&apos;s discuss how I can help bring your vision to life with thoughtful design and scalable engineering.
+          
+          <p className="text-xl md:text-2xl text-background/70 mb-16 max-w-3xl leading-relaxed text-balance">
+            I help exceptional teams clarify, design, and ship accessible interfaces that feel fast, thoughtful, and production-ready from day one.
           </p>
-          <Button size="lg" className="rounded-full h-14 px-10 text-lg font-semibold bg-primary text-primary-foreground hover:bg-primary/90 shadow-2xl transition-transform hover:-translate-y-1" asChild>
-            <Link href="/contact">Start a Conversation <ArrowDownRight className="ml-2 h-5 w-5" /></Link>
-          </Button>
+          
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full sm:w-auto">
+            <Button size="lg" className="rounded-full h-16 px-10 text-lg font-bold bg-primary text-primary-foreground hover:bg-primary/90 shadow-[0_0_40px_-10px_rgba(var(--primary),0.5)] transition-all hover:scale-105 hover:shadow-[0_0_60px_-15px_rgba(var(--primary),0.7)] w-full sm:w-auto" asChild>
+              <Link href="/contact">Book an introduction <ArrowRight className="ml-3 h-5 w-5" /></Link>
+            </Button>
+            <Button size="lg" variant="outline" className="rounded-full h-16 px-10 text-lg font-bold border-background/20 bg-background/5 text-background hover:bg-background/10 hover:text-background w-full sm:w-auto transition-colors" asChild>
+              <Link href="#work">View selected work</Link>
+            </Button>
+          </div>
         </div>
       </section>
     </div>

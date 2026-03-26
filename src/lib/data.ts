@@ -78,6 +78,7 @@ export const testimonials = [
     name: 'Stephen Shepherd',
     role: 'CEO, Consumers United',
     avatar: 'https://placehold.co/100x100.png',
+    takeaway: 'Exceeded all expectations.',
     quote: 'Working with Steve was a fantastic experience. Their attention to detail and commitment to quality are second to none. The final product exceeded all our expectations.',
     hint: 'woman professional'
   },
@@ -85,13 +86,15 @@ export const testimonials = [
     name: 'Lourdes Diaz',
     role: 'Tech Lead, Repair Lift',
     avatar: 'https://placehold.co/100x100.png',
+    takeaway: 'A true professional eye.',
     quote: 'Steve is a true professional. They are not only technically skilled but also have a great eye for design. I would highly recommend them to anyone.',
     hint: 'man professional'
   },
   {
     name: 'Dennis Bede',
-    role: 'Founder, Technocrati Designs & Solutions.',
+    role: 'Founder, Technocrati Designs',
     avatar: 'https://placehold.co/100x100.png',
+    takeaway: 'Consistently high quality.',
     quote: 'The passion Steve brings to their work is infectious. They consistently delivered high-quality work on time and was a pleasure to collaborate with.',
     hint: 'woman smiling'
   },
@@ -99,6 +102,7 @@ export const testimonials = [
     name: 'David Chen',
     role: 'CTO, Data Insights',
     avatar: 'https://placehold.co/100x100.png',
+    takeaway: 'Robust, scalable solutions.',
     quote: 'An incredibly talented developer. Steve was able to tackle complex challenges with ease and delivered a robust, scalable solution for our dashboard.',
     hint: 'man glasses'
   },
