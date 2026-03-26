@@ -27,12 +27,12 @@ export default function ProofBar({ items = DEFAULT_ITEMS, className = '', size =
       <div aria-hidden className="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-background to-transparent" />
       <div aria-hidden className="pointer-events-none absolute inset-y-0 right-0 w-6 bg-gradient-to-l from-background to-transparent" />
       
-      <ul className="mx-auto flex max-w-7xl gap-2 overflow-x-auto px-4 py-2.5 snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none]" role="list">
+      <ul className="container mx-auto flex gap-2 overflow-x-auto py-2.5 snap-x snap-mandatory scrollbar-hide" role="list">
         {items.map((it) => (
           <motion.li
             key={it.id}
             className={cn(
-                'snap-start shrink-0 rounded-full border border-border/50 bg-card/60 text-foreground/90 backdrop-blur',
+                'snap-start shrink-0 rounded-full border border-amber-500/40 bg-card/60 text-foreground/90 backdrop-blur inline-flex items-center gap-1.5',
                 sizeCls
             )}
             initial={prefersReduced ? false : { opacity: 0, y: 6 }}
@@ -41,8 +41,8 @@ export default function ProofBar({ items = DEFAULT_ITEMS, className = '', size =
             transition={{ duration: 0.25, ease: 'easeOut' }}
           >
             <span className="sr-only">Proof point: </span>
-            {it.icon ? <span className="mr-1.5 inline-flex items-center">{it.icon}</span> : null}
-            {it.text}
+            {it.icon ? <span className="flex items-center justify-center">{it.icon}</span> : null}
+            <span className="leading-none pt-0.5">{it.text}</span>
           </motion.li>
         ))}
       </ul>

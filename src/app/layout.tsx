@@ -58,9 +58,9 @@ export const viewport: Viewport = {
 };
 
 const customItems: ProofItem[] = [
-  { id: 'perf',  text: 'LCP 1.6s',          icon: <Zap className="size-4 opacity-80" /> },
-  { id: 'a11y',  text: 'WCAG 2.2 AA',       icon: <ShieldCheck className="size-4 opacity-80" /> },
-  { id: 'deploy',text: 'Zero-downtime deploys', icon: <Rocket className="size-4 opacity-80" /> },
+  { id: 'perf',  text: 'LCP 1.6s',          icon: <Zap className="size-4 text-[#39ff14]" style={{ filter: 'drop-shadow(0 0 6px #39ff14)' }} /> },
+  { id: 'a11y',  text: 'WCAG 2.2 AA',       icon: <ShieldCheck className="size-4 text-[#39ff14]" style={{ filter: 'drop-shadow(0 0 6px #39ff14)' }} /> },
+  { id: 'deploy',text: 'Zero-downtime deploys', icon: <Rocket className="size-4 text-[#39ff14]" style={{ filter: 'drop-shadow(0 0 6px #39ff14)' }} /> },
 ];
 
 export default function RootLayout({

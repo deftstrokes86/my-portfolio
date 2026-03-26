@@ -18,6 +18,8 @@ export const projects = [
     title: 'E-Commerce Platform',
     slug: 'ecommerce-platform',
     summary: 'A scalable e-commerce solution with a focus on user experience and performance.',
+    problem: 'High bounce rates and slow, convoluted checkout processes were actively hurting overall sales.',
+    outcome: 'Conversion rates increased by 40% and infrastructure TTFB dropped under 1 second.',
     role: 'Lead Developer',
     year: 2023,
     tags: ['Next.js', 'TypeScript', 'GraphQL', 'Stripe'],
@@ -31,6 +33,8 @@ export const projects = [
     title: 'SaaS Dashboard',
     slug: 'saas-dashboard',
     summary: 'A data-driven dashboard for a SaaS product, providing users with actionable insights.',
+    problem: 'Users could not visually parse complex dataset clusters, leading to churn and frustration.',
+    outcome: 'Increased daily active usage by 25% and reduced customer support volume by half.',
     role: 'Front-End Engineer',
     year: 2022,
     tags: ['React', 'D3.js', 'Node.js', 'REST API'],
@@ -44,6 +48,8 @@ export const projects = [
     title: 'Mobile Banking App',
     slug: 'mobile-banking-app',
     summary: 'A secure and intuitive mobile app for a leading financial institution.',
+    problem: 'Legacy mobile codebase was inaccessible and lacked unified brand design tokens.',
+    outcome: 'Achieved WCAG 2.1 AA compliance and shipped a universal cross-platform design system.',
     role: 'UI/UX Designer & Developer',
     year: 2021,
     tags: ['React Native', 'Firebase', 'Figma', 'UX/UI'],
@@ -216,6 +222,7 @@ This approach, popularized by React, has fundamentally changed how we build user
 ];
 
 export const navLinks = [
+  { href: '/', label: 'Home' },
   { href: '#work', label: 'Work' },
   { href: '/capabilities', label: 'Capabilities' },
   { href: '#case-studies', label: 'Case Studies' },
