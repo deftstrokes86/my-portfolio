@@ -1,76 +1,99 @@
-
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { siteConfig, navLinks } from '@/lib/data';
-import { Mail } from 'lucide-react';
-
-const GithubIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35.0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35.0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/></svg>
-);
-const TwitterIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 1.4 3.3 4.4 3.3 4.4s-1.4 1.4-2.8 1.4c-.7 0-1.4-.2-2-.5.8 3.8-3.3 6.6-6.6 6.6s-6.6-3.3-6.6-6.6c0-1.4.3-2.8 1-4.1-3.3.4-6.6-1.4-6.6-5.5 0-.7.3-1.4 1-2.1.3-.3.6-.6 1-.8.2-.1.4-.2.6-.3.2-.1.4-.1.6-.1.3 0 .6.1.8.2.3.1.5.3.7.5.3.2.5.5.7.8.2.3.4.6.5.9.2.3.3.7.4 1 .1.3.1.6.1.9s0 .6-.1.9c-.1.3-.2.6-.3.9-.1.3-.3.6-.5.8-.2.3-.4.5-.7.7-.2.2-.5.4-.7.5-.3.1-.5.2-.8.2H2.1c-.1 0-.1.1-.1.1.1.3.2.6.4.8.1.3.3.5.5.7.2.2.5.4.7.5.3.2.6.3.9.4.3.1.6.1.9.1.3 0 .6 0 .9-.1.3-.1.6-.2.8-.4.3-.1.5-.3.7-.5s.4-.4.5-.7c.1-.3.2-.6.3-.9.1-.3.1-.6.1-.9s0-.6-.1-.9c-.1-.3-.2-.6-.4-.9-.1-.3-.3-.5-.5-.8-.2-.3-.4-.5-.7-.7-.2-.2-.5-.4-.7-.5-.3-.1-.5-.2-.8-.2-.3 0-.6-.1-.8 0-.3.1-.5.2-.7.4-.2.2-.4.4-.6.6-.1.2-.3.4-.4.6-.1.2-.2.4-.2.6s.1.4.1.6.1.4.2.6c.1.2.2.4.3.5.1.2.3.3.4.4.2.1.3.2.5.3.2.1.4.1.6.1h.3c.2 0 .4-.1.6-.1.2-.1.4-.2.6-.3.2-.1.4-.3.6-.4.1-.2.3-.3.4-.5.1-.2.2-.4.3-.6.1-.2.1-.4.1-.6 0-.2-.1-.4-.1-.6-.1-.2-.1-.4-.2-.5-.1-.2-.2-.3-.3-.4-.1-.1-.3-.2-.4-.3-.1-.1-.3-.1-.4-.1z"/></svg>
-);
-const LinkedinIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-);
+import { Mail, Github, Twitter, Linkedin, ArrowUpRight } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="w-full border-t border-border/40 bg-secondary/30">
-      <div className="container mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 py-12 md:grid-cols-12 md:px-6">
-        <div className="col-span-1 md:col-span-5">
-          <Link href="/" className="font-headline text-xl font-bold">{siteConfig.name}</Link>
-          <p className="mt-4 max-w-md text-muted-foreground">
-            {siteConfig.description}
-          </p>
-        </div>
-
-        <div className="col-span-1 md:col-span-2 md:col-start-7">
-          <h3 className="font-headline font-semibold">Menu</h3>
-          <ul className="mt-4 space-y-2">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <Link href={link.href} className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="col-span-1 md:col-span-3">
-          <h3 className="font-headline font-semibold">Contact</h3>
-          <div className="mt-4 space-y-2">
-            <a href={`mailto:steveigbeuike@gmail.com?subject=Project%20Inquiry%20from%20${siteConfig.name}%20Portfolio`} className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground">
-                <Mail className="h-4 w-4" />
-                <span>steveigbeuike@gmail.com</span>
-            </a>
+    <footer className="w-full bg-card border-t border-border/40 pb-8 pt-16 md:pt-24 lg:pt-32 relative z-10 transition-colors duration-300">
+      <div className="container mx-auto px-4 md:px-6 max-w-7xl">
+        
+        {/* Top Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 border-b border-border/40 pb-16 lg:pb-20">
+          
+          {/* Brand Block */}
+          <div className="md:col-span-12 lg:col-span-6 flex flex-col items-start pr-4">
+            <Link 
+              href="/" 
+              className="font-headline text-3xl font-extrabold tracking-tight text-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-md px-1 -ml-1"
+            >
+              {siteConfig.author}
+            </Link>
+            <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-sm leading-relaxed">
+              Designer-engineer building fast, accessible, production-ready web products.
+            </p>
+            <div className="mt-10">
+               <p className="text-xs font-bold tracking-widest uppercase text-foreground/50 mb-4 ml-1">Current Status</p>
+               <div className="flex items-center gap-3 bg-secondary/30 border border-border/50 px-5 py-2.5 rounded-full w-fit shadow-sm">
+                  <span className="relative flex h-2.5 w-2.5">
+                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                     <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+                  </span>
+                  <span className="text-sm font-semibold text-foreground/90">Available for new projects</span>
+               </div>
+            </div>
           </div>
+
+          {/* Navigation Block */}
+          <div className="md:col-span-5 lg:col-span-2 lg:col-start-8">
+            <h3 className="font-bold text-foreground mb-6">Navigation</h3>
+            <ul className="space-y-4">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <Link 
+                    href={link.href} 
+                    className="group flex items-center text-muted-foreground transition-colors hover:text-foreground font-medium w-fit focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm px-1 -ml-1"
+                  >
+                    {link.label}
+                    <ArrowUpRight className="ml-1 h-3.5 w-3.5 opacity-0 -translate-y-1 translate-x-1 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 group-hover:text-primary" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Block */}
+          <div className="md:col-span-7 lg:col-span-3 flex flex-col">
+            <h3 className="font-bold text-foreground mb-6">Connect</h3>
+            
+            <a 
+              href={`mailto:steveigbeuike@gmail.com?subject=Project%20Inquiry%20from%20Portfolio`} 
+              className="group flex items-center gap-4 text-muted-foreground transition-colors hover:text-foreground font-medium w-fit mb-8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-full pr-4 -ml-1"
+            >
+               <div className="h-10 w-10 rounded-full bg-secondary/50 border border-border/60 flex items-center justify-center transition-colors duration-300 group-hover:bg-primary/10 group-hover:border-primary/30 group-hover:text-primary shadow-sm">
+                 <Mail className="h-4 w-4" />
+               </div>
+               <span className="truncate">steveigbeuike@gmail.com</span>
+            </a>
+
+            <div className="bg-gradient-to-br from-secondary/40 to-transparent border border-border/50 rounded-3xl p-6 shadow-sm">
+               <p className="text-sm text-foreground/90 font-medium leading-relaxed mb-5">Have a product to launch, refine, or rebuild? Let's talk.</p>
+               <div className="flex items-center gap-3">
+                 <Button variant="ghost" size="icon" className="h-11 w-11 rounded-full bg-background border border-border/40 hover:bg-secondary transition-all hover:-translate-y-0.5" aria-label="LinkedIn Profile" asChild>
+                   <Link href={siteConfig.socials.linkedin} target="_blank" rel="noreferrer"><Linkedin className="h-4.5 w-4.5" /></Link>
+                 </Button>
+                 <Button variant="ghost" size="icon" className="h-11 w-11 rounded-full bg-background border border-border/40 hover:bg-secondary transition-all hover:-translate-y-0.5" aria-label="GitHub Profile" asChild>
+                   <Link href={siteConfig.socials.github} target="_blank" rel="noreferrer"><Github className="h-4.5 w-4.5" /></Link>
+                 </Button>
+                 <Button variant="ghost" size="icon" className="h-11 w-11 rounded-full bg-background border border-border/40 hover:bg-secondary transition-all hover:-translate-y-0.5" aria-label="Twitter Profile" asChild>
+                   <Link href={siteConfig.socials.twitter} target="_blank" rel="noreferrer"><Twitter className="h-4.5 w-4.5" /></Link>
+                 </Button>
+               </div>
+            </div>
+          </div>
+          
         </div>
-      </div>
-      <div className="container mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 border-t border-border/40 py-6 md:flex-row md:py-8">
-        <p className="text-sm text-muted-foreground">
-          &copy; {new Date().getFullYear()} {siteConfig.author}. All rights reserved.
-        </p>
-        <div className="flex items-center gap-2">
-          <Button variant="ghost" size="icon" asChild>
-            <Link href={siteConfig.socials.twitter} target="_blank" rel="noreferrer">
-              <TwitterIcon className="h-5 w-5" />
-              <span className="sr-only">Twitter</span>
-            </Link>
-          </Button>
-          <Button variant="ghost" size="icon" asChild>
-            <Link href={siteConfig.socials.github} target="_blank" rel="noreferrer">
-              <GithubIcon className="h-5 w-5" />
-              <span className="sr-only">GitHub</span>
-            </Link>
-          </Button>
-          <Button variant="ghost" size="icon" asChild>
-            <Link href={siteConfig.socials.linkedin} target="_blank" rel="noreferrer">
-              <LinkedinIcon className="h-5 w-5" />
-              <span className="sr-only">LinkedIn</span>
-            </Link>
-          </Button>
+
+        {/* Bottom Bar */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-muted-foreground font-medium">
+            &copy; {new Date().getFullYear()} {siteConfig.author}. All rights reserved.
+          </p>
+          <div className="flex gap-6 text-sm text-muted-foreground/70 font-medium">
+             <span>Abuja, Nigeria</span>
+             <span className="hidden sm:inline-block">&middot;</span>
+             <span className="hidden sm:inline-block">West Africa Standard Time</span>
+          </div>
         </div>
       </div>
     </footer>
