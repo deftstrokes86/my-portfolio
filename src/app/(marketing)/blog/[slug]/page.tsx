@@ -7,8 +7,9 @@ import { BlogPostClientView } from './blog-post-client-view';
 import { JSONLD, blogPostingLD } from '@/lib/structured-data';
 import { siteUrl } from '@/lib/seo';
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = await getPostBySlug(params.slug);
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params;
+  const post = await getPostBySlug(resolvedParams.slug);
 
   if (!post) {
     notFound();

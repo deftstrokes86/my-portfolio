@@ -3,7 +3,7 @@ import { ImageResponse } from '@vercel/og';
 export const runtime = 'edge';
 
 const fontData = fetch(
-  new URL('../../../public/og/Inter-Bold.ttf', import.meta.url)
+  new URL('../../../../public/og/Inter-Bold.ttf', import.meta.url)
 ).then((res) => res.arrayBuffer()).catch(() => undefined as unknown as ArrayBuffer);
 
 export async function GET(req: Request) {

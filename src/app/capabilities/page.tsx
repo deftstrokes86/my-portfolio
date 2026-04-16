@@ -24,7 +24,7 @@ type Cap = {
   icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
 };
 
-export const CAPS: Cap[] = [
+const CAPS: Cap[] = [
   { id: 'nextjs',     title: 'Next.js',     blurb: 'Hybrid rendering, routing, and performance primitives.', when: ['SSR/SSG/ISR content sites', 'App Router layouts & caching', 'Edge functions for speed'] },
   { id: 'wordpress',  title: 'WordPress',   blurb: 'Themes, plugins, and headless architectures.', when: ['Marketing sites that need editors', 'WooCommerce storefronts', 'Headless WP with Next.js'] },
   { id: 'seo',        title: 'SEO',         blurb: 'Technical SEO baked into design and build.', when: ['Core Web Vitals, schema, sitemaps', 'Internationalization & canonicals', 'Content architecture & audits'] },

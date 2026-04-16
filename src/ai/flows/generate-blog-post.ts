@@ -92,7 +92,7 @@ const generateBlogPostFlow = ai.defineFlow(
     inputSchema: BlogPostInputSchema,
     outputSchema: BlogPostOutputSchema,
   },
-  async (input) => {
+  async (input: BlogPostInput) => {
     // The prompt now uses input.topic as the title, so we can call it directly.
     const {output} = await generateBlogPostPrompt(input);
     return output!;
@@ -116,7 +116,7 @@ const suggestSeoKeywordsFlow = ai.defineFlow(
         inputSchema: SeoKeywordsInputSchema,
         outputSchema: SeoKeywordsOutputSchema,
     },
-    async (input) => {
+    async (input: { topic: string }) => {
         const {output} = await suggestKeywordsPrompt(input);
         return output!;
     }
@@ -138,7 +138,7 @@ const suggestTopicsFlow = ai.defineFlow(
         inputSchema: TopicSuggestionInputSchema,
         outputSchema: TopicSuggestionOutputSchema,
     },
-    async (input) => {
+    async (input: { description: string }) => {
         const {output} = await suggestTopicPrompt(input);
         return output!;
     }

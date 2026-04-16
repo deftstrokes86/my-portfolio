@@ -7,8 +7,9 @@ import { caseStudies } from '@/lib/data';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
-export default async function CaseStudyPage({ params }: { params: { slug: string } }) {
-  const caseStudy = caseStudies.find((cs) => cs.slug === params.slug);
+export default async function CaseStudyPage({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params;
+  const caseStudy = caseStudies.find((cs) => cs.slug === resolvedParams.slug);
 
   if (!caseStudy) {
     notFound();
